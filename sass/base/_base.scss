@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+/* =========================
+
+base
+
+========================= */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400');
+
+// ----- color -----
+
+$white: #fff;
+$gray: #838383;
+$pink: #ffcccc;
+$blue: #c7ffdf;
+
+//  ----------------
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	color: $gray;
+}
+
+section {
+	width: 100%;
+	font-family: 'Montserrat', sans-serif;
+}
+
+img {
+	max-width: 100%;
+}
+
+.btn-line {
+	position: relative;
+	display: inline-block;
+
+}
+
+.btn {
+	display: block;
+	position: relative;
+	padding: .5rem 3rem;
+	background: #fff;
+	border: 1px solid $gray;
+	color: $gray;
+	line-height: 2;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	transition: ease-in-out .3s;
+	box-sizing: border-box;
+	overflow: hidden;
+	z-index: 1;
+	
+	&::before,&::after {
+		transition: ease-in-out .3s;
+		box-sizing: border-box;
+		z-index: -1;
+	}
+	
+	&::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: $pink;
+		transform: translateX(-100%);
+		content: "";
+	}
+	
+	&:hover::before {
+		transform:translateX(0)
+	}
+}
+
+.b-pink {
+	&::before {
+		background: $pink;
+	}
+}
+.b-blue {
+	&::before {
+		background: $blue;
+	}
+}
+
+
+.rightBox {
+	width: 100%;
+	height: 100%;
+	font-size: 1.3rem;
+}
+
+.txt {
+	font-size: 1rem;
+	color: $gray;
+	line-height: 1.3;
+}
+
+#barba-wrapper {
+	width: 100%;
+}
+
+.pink-scroll {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $pink;
+    z-index: 99;
+    pointer-events: none;
+    transition: transform .8s ease-in-out;
+}
+
+@include mq(pc) {
+	.page {
+		flex-direction: row;
+	}
+	section {
+		width: 75%;
+	}
+	.rightBox {
+		width: 75%;
+		margin-left: auto;
+	}
+	.btn-line {
+	position: relative;
+	display: inline-block;
+	transition: .3s ease-in-out;
+
+	&::after {
+		position: absolute;
+		bottom: 50%;
+		left: 0;
+		content: '';
+		width: 0;
+		height: 1px;
+		background-color: $gray;
+		transition: .3s;
+	}
+	&:hover::after {
+		width: 100%;
+	}
+}
+}
