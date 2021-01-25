@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+/* =========================
+
+page
+
+========================= */
+
+
+
+.p-mainimg {
+	height: 100vh;
+	position: relative;
+}
+
+.bg-hirano {
+	background: url(../images/img_hirano.jpg) 50% 50% no-repeat;
+}
+
+.c-page-ttl {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	font-size: 1.7rem;
+	letter-spacing: .2rem;
+	font-style: italic;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.parallaxBox {
+	box-sizing: border-box;
+	color: #FFF;
+	font-size: 5rem;
+	padding: 5%;
+}
+
+
+.detail {
+	background: url(../images/bg-grid.jpg) 0 0;
+}
+
+.credit {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	article {
+		font-size: 1.3rem;
+		color: $gray;
+	}
+}
+
+.s-box {
+	padding: 1rem;
+	line-height: 1.7;
+	
+	.s-ttl {
+		font-size: 1rem;
+		letter-spacing: .3em;
+		font-style: italic;
+		font-weight: bold;
+	}
+	
+	p {
+		font-size: 1.1rem;
+		letter-spacing: .3em;
+	}
+}
+
+.mockup-img {
+	max-width: 1280px;
+	margin: 0 auto;
+	
+	img {
+		max-width: 100%;
+	}
+}
+
+
+.concept {
+	padding: 5rem 0;
+	
+	h2 {
+		padding-bottom: 2rem;
+		font-size: 2rem;
+		letter-spacing: .3em;
+		font-style: italic;
+		text-align: center;
+	}
+	
+	.txt {
+		width: 80%;
+		margin: 0 auto;
+		color: $gray;
+		line-height: 1.7;
+		letter-spacing: .1em;
+		font-size: .9rem;
+	}
+}
+
+.t-blue {
+	color: $blue;
+}
+.t-pink {
+	color: $pink;
+}
+
+.p-otherimg {
+	padding: 5rem 0;
+	
+	ul {
+		display: flex;
+		align-content: center;
+		justify-content: space-around;
+		
+		li {
+			width: 40%;
+			img {
+				box-shadow: 10px 10px 40px rgba(0,0,0,.2);
+			}
+		}
+	}
+}
+
+.pink {
+	background: rgb(255,204,204);
+	background: linear-gradient(170deg, rgba(255,204,204,1) 0%, rgba(218,238,217,1) 100%);
+}
+.blue {
+	background: rgb(199,255,223);
+	background: linear-gradient(170deg, rgba(199,255,223,1) 0%, rgba(240,218,209,1) 100%);
+}
+
+@include mq(sp) {
+	.p-mainimg {
+		max-height: 6.5rem;
+	}
+}
+
+@include mq(tab) {
+	.p-mainimg {
+		height: 100vh;
+		
+	}
+}
+
+@include mq(pc) {
+	.c-page {
+		padding: 0;
+	}
+	
+	.c-page-ttl {
+		bottom: 0;
+		left: 3rem;
+		font-size: 2rem;
+	}
+	
+	.p-mainimg {
+		height: 80vh;
+		max-height: 100%;
+	}
+	
+	.parallax-bg {
+		background-attachment: fixed;
+		background-position: 50% 50%;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	
+	.credit {
+		flex-direction: row;
+		align-items: center;
+	}
+	
+	.s-box {
+		padding: 1.5rem;
+	}
+	
+	.p-otherimg {
+		ul {
+			flex-direction: row;
+		}
+	}
+	.concept {
+		.txt {
+			width: 60%;
+			font-size: 1.3rem;
+		}
+	}
+}
